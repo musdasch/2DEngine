@@ -16,7 +16,7 @@ public class GamePanel extends JPanel {
 	
 	public GamePanel( int width, int height, World world ){
 		this.world = world;
-		this.world.addGamePanel( this );
+		this.world.setGamePanel( this );
 		this.world.start();
 		this.setSize( width, height );
 		this.clearRectangle = new GameGraphicRectangle( 0, 0,width, height );
