@@ -23,7 +23,12 @@ public class World extends Thread {
 	
 	public void paint(Graphics g){
 		for (WorldObject worldObject : worldObjects) {
-			worldObject.paint(g);
+			if( 
+					worldObject.getX() < this.gamePanel.getWidth() &&
+					worldObject.getY() < this.gamePanel.getHeight()
+					){
+				worldObject.paint(g);
+			}
 		}
 	}
 	

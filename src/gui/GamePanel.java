@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Graphics;
+import java.awt.event.ComponentEvent;
 
 import javax.swing.JPanel;
 
@@ -23,8 +24,9 @@ public class GamePanel extends JPanel {
 	
 	@Override
 	public void paintComponent( Graphics g ){
+		this.clearRectangle.setWidth( this.getWidth() );
+		this.clearRectangle.setHeight( this.getHeight() );
 		this.clearRectangle.paint(g);
 		this.world.paint(g);
 	}
-
 }
