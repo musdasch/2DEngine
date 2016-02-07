@@ -18,7 +18,7 @@ public class Main {
 				0,
 				100,
 				100,
-				new Vector2D( 0.1, 0.1 ) 
+				new Vector2D( 0.1, 0 ) 
 		);
 		
 		GameGraphicEllipse ellipse = new GameGraphicEllipse(
@@ -32,6 +32,8 @@ public class Main {
 		ball.setGraphic( ellipse );
 		
 		world.addWorldObject( ball );
+		
+		world.setGravity( new Vector2D( 0 , 0.00098 ) );
 		
 		GameFrame frame = new GameFrame( "test",  1200, 600, world );
 	}

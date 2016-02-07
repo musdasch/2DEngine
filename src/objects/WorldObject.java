@@ -51,6 +51,10 @@ public class WorldObject {
 		
 	}
 	
+	public void addVector( Vector2D vector ){
+		this.vector.add( vector );
+	}
+	
 	public void setX( double x ){
 		this.x = x;
 	}

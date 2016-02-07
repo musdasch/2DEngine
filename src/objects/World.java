@@ -4,8 +4,11 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import gui.GamePanel;
+import physics.Vector2D;
 
 public class World extends Thread {
+	
+	private Vector2D gravity;
 	
 	private ArrayList<WorldObject> worldObjects = new ArrayList<>();
 	
@@ -19,6 +22,10 @@ public class World extends Thread {
 	
 	public void addGamePanel( GamePanel gamePanel ){
 		this.gamePanel = gamePanel;
+	}
+	
+	public void setGravity( Vector2D vector ){
+		this.gravity = vector;
 	}
 	
 	public void paint(Graphics g){
@@ -37,6 +44,10 @@ public class World extends Thread {
 		while( true ){
 			for (WorldObject worldObject : worldObjects) {
 				worldObject.move();
+				
+				if( gravity != null ){
+					worldObject.addVector( gravity );
+				}
 			}
 			
 			this.gamePanel.repaint();
