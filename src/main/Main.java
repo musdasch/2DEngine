@@ -21,17 +21,29 @@ public class Main {
 				new Vector2D( 0.5, 0 ) 
 		);
 		
+		WorldObjectBall ball2 = new WorldObjectBall(
+				1000,
+				0,
+				100,
+				100,
+				new Vector2D( -0.5, 0.2 ) 
+		);
+		
 		GameGraphicEllipse ellipse = new GameGraphicEllipse(
 				0,
 				0,
-				200 
+				100 
 		);
 		
 		ellipse.setBackgroundColor( new Color( 255, 255, 255 ) );
 		
 		ball.setGraphic( ellipse );
+		ball2.setGraphic( ellipse );
 		
 		world.addWorldObject( ball );
+		world.addWorldObject( ball2 );
+		
+		world.setGravity( new Vector2D( 0, 0.0098 ) );
 		
 		GameFrame frame = new GameFrame( "test",  1200, 600, world );
 	}
