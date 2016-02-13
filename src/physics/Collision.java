@@ -86,6 +86,10 @@ public class Collision {
 		return this.secondObject;
 	}
 	
+	/**
+	 * Returns the distance between the tow objects.
+	 * @return Distance between the tow Objects.
+	 */
 	public double getDistance(){
 		return Math.sqrt(
 				(
@@ -99,6 +103,40 @@ public class Collision {
 						this.getFirstObject().getCenterY()
 						- this.getSecondObject().getCenterY()
 					, 2 )
+				)
+			);
+	}
+	
+	/**
+	 * Returns the angle form the first object to the second object in radians.
+	 * @return Angle to the second object in radians.
+	 */
+	public double getFirstAngle(){
+		return Math.atan( 
+				(
+						this.getFirstObject().getCenterY()
+						- this.getSecondObject().getCenterY()
+				)
+				/ (
+						this.getFirstObject().getCenterX()
+						- this.getSecondObject().getCenterX()
+				)
+			);
+	}
+	
+	/**
+	 * Returns the angle form the first object to the second object in radians.
+	 * @return Angle to the second object in radians.
+	 */
+	public double getSecondAngle(){
+		return Math.atan( 
+				(
+						this.getSecondObject().getCenterY()
+						- this.getFirstObject().getCenterY()
+				)
+				/ (
+						this.getSecondObject().getCenterX()
+						- this.getFirstObject().getCenterX()
 				)
 			);
 	}
