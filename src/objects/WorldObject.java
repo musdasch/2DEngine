@@ -138,7 +138,7 @@ public class WorldObject {
 	}
 	
 	public void setMass( double mass ){
-		this.setDensity(mass / ( this.getWidth() * this.getHeight() ) ); 
+		this.setDensity( mass / ( this.getWidth() * this.getHeight() ) );
 	}
 	
 	public void setVector2D( Vector2D vector ){
@@ -194,7 +194,7 @@ public class WorldObject {
 	}
 	
 	public double getRadius(){
-		return ( this.getWidth() / 2 + this.getHeight() / 2 ) / 2;
+		return 0;
 	}
 	
 	public void paint(Graphics g){
