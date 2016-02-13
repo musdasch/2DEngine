@@ -31,6 +31,12 @@ public class CirclesCollision extends Collision {
 				+ super.getSecondObject().getRadius();
 	}
 	
+	@Override
+	public void onCollision(){
+		super.getFirstObject().addVector( this.getFirstNewVector() );
+		super.getSecondObject().addVector( this.getSecondNewVector() );
+	}
+	
 	/**
 	 * Get the collision point between the tow circles along the x-axis.
 	 * @return collision point along the x-axis.
@@ -75,6 +81,87 @@ public class CirclesCollision extends Collision {
 				);
 	}
 	
-	
-
+	/**
+	 * Calculate the new vector for the first object.
+	 * @return new vector for the first object.
+	 */
+	public Vector2D getFirstNewVector(){
+		return new Vector2D( 
+				(
+					super.getFirstObject().getVector2D().getX()
+					* (
+							super.getFirstObject().getMass()
+							- super.getSecondObject().getMass()
+					)
+					+ (
+							2
+							* super.getSecondObject().getMass()
+							* super.getSecondObject().getVector2D().getX()
+					)
+				)
+				/ (
+						super.getFirstObject().getMass()
+						+ super.getSecondObject().getMass()
+				),
+				(
+					super.getFirstObject().getVector2D().getY()
+					* (
+							super.getFirstObject().getMass()
+							- super.getSecondObject().getMass()
+					)
+					+ (
+							2
+							* super.getSecondObject().getMass()
+							* super.getSecondObject().getVector2D().getY()
+					)
+				)
+				/ (
+						super.getFirstObject().getMass()
+						+ super.getSecondObject().getMass()
+				)
+				
+			);
+		}
+		
+		/**
+		 * Calculate the new vector for the second object.
+		 * @return new vector for the second object.
+		 */
+		public Vector2D getSecondNewVector(){
+			return new Vector2D( 
+					(
+						super.getSecondObject().getVector2D().getX()
+						* (
+								super.getSecondObject().getMass()
+								- super.getFirstObject().getMass()
+						)
+						+ (
+								2
+								* super.getFirstObject().getMass()
+								* super.getFirstObject().getVector2D().getX()
+						)
+					)
+					/ (
+							super.getSecondObject().getMass()
+							+ super.getFirstObject().getMass()
+					),
+					(
+						super.getSecondObject().getVector2D().getY()
+						* (
+								super.getSecondObject().getMass()
+								- super.getFirstObject().getMass()
+						)
+						+ (
+								2
+								* super.getFirstObject().getMass()
+								* super.getFirstObject().getVector2D().getY()
+						)
+					)
+					/ (
+							super.getSecondObject().getMass()
+							+ super.getFirstObject().getMass()
+					)
+					
+				);
+		}
 }
