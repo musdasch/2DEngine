@@ -19,7 +19,7 @@ public class Main {
 				0,
 				100,
 				100,
-				new Vector2D( 0.5, 0 ) 
+				new Vector2D( 2, 0 ) 
 		);
 		
 		WorldObjectBall ball2 = new WorldObjectBall(
@@ -27,7 +27,7 @@ public class Main {
 				0,
 				100,
 				100,
-				new Vector2D( -0.5, 0.2 ) 
+				new Vector2D( -2.0, 0.2 ) 
 		);
 		
 		GameGraphicEllipse ellipse = new GameGraphicEllipse(
@@ -49,6 +49,8 @@ public class Main {
 		world.addCollision(collision);
 		
 		world.setGravity( new Vector2D( 0, 0.0098 ) );
+		
+		world.setWorldDelay( 100 );
 		
 		GameFrame frame = new GameFrame( "test",  1200, 600, world );
 	}
