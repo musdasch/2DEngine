@@ -125,8 +125,8 @@ public class Collision {
 	}
 	
 	/**
-	 * Returns the angle form the first object to the second object in radians.
-	 * @return Angle to the second object in radians.
+	 * Returns the angle form the second object to the first object in radians.
+	 * @return Angle to the fist object in radians.
 	 */
 	public double getSecondAngle(){
 		return Math.atan( 
