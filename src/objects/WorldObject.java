@@ -147,8 +147,16 @@ public class WorldObject {
 		return this.x;
 	}
 	
+	public double getCenterX(){
+		return this.getX() / 2;
+	}
+	
 	public double getY(){
 		return this.y;
+	}
+	
+	public double getCenterY(){
+		return this.getY() / 2;
 	}
 	
 	public double getWidth(){
@@ -165,6 +173,10 @@ public class WorldObject {
 	
 	public GameGraphic getGameGraphic(){
 		return this.graphic;
+	}
+	
+	public double getRadius(){
+		return ( this.getWidth() / 2 + this.getHeight() / 2 ) / 2;
 	}
 	
 	public void paint(Graphics g){
