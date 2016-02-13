@@ -31,6 +31,9 @@ public class CirclesCollision extends Collision {
 				+ super.getSecondObject().getRadius();
 	}
 	
+	/**
+	 * Override the on Collision for control the objects.
+	 */
 	@Override
 	public void onCollision(){
 		super.getFirstObject().addVector( this.getFirstNewVector() );
