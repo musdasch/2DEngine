@@ -3,9 +3,8 @@ package objects;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import org.omg.CORBA.Object;
-
 import gui.GamePanel;
+import physics.Collision;
 import physics.Vector2D;
 
 /**
@@ -30,6 +29,12 @@ public class World extends Thread {
 	private ArrayList<WorldObject> worldObjects = new ArrayList<>();
 	
 	/**
+	 * A list of Collisions.
+	 * @see physics.Colision
+	 */
+	private ArrayList<Collision> collisions = new ArrayList<>();
+	
+	/**
 	 * The GamePanel for draw the World on it.
 	 * @see gui.GamePanel
 	 */
@@ -46,7 +51,16 @@ public class World extends Thread {
 	 * @param object - WorldObject.
 	 */
 	public void addWorldObject( WorldObject object ){
-		worldObjects.add( object );
+		this.worldObjects.add( object );
+	}
+	
+	/**
+	 * It's for add a Collision to the world.
+	 * @see physics.Collision
+	 * @param collision - the Collision object.
+	 */
+	public void addCollision( Collision collision ){
+		this.collisions.add( collision );
 	}
 	
 	/**
@@ -114,6 +128,37 @@ public class World extends Thread {
 	}
 	
 	/**
+	 * Run all objects in the world.
+	 */
+	public void runObjects(){
+		
+		/**
+		 * run the move the worldObjects.
+		 */
+		for (WorldObject worldObject : worldObjects) {
+			worldObject.move();
+			
+			if( gravity != null ){
+				worldObject.addVector( gravity );
+			}
+		}
+		
+		/**
+		 * run the collisions.
+		 */
+		this.runCollisions();
+	}
+	
+	/**
+	 * Run the collisions in the world.
+	 */
+	public void runCollisions(){
+		for (Collision collision : collisions) {
+			collision.collisionDetection();
+		}
+	}
+	
+	/**
 	 * Run the world and paint it on the GamePanel.
 	 * @see gui.GamePanel
 	 */
@@ -124,13 +169,7 @@ public class World extends Thread {
 			/**
 			 * Run all world objects.
 			 */
-			for (WorldObject worldObject : worldObjects) {
-				worldObject.move();
-				
-				if( gravity != null ){
-					worldObject.addVector( gravity );
-				}
-			}
+			this.runObjects();
 			
 			/**
 			 * Repaint the GamePanel.
