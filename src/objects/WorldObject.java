@@ -158,11 +158,11 @@ public class WorldObject {
 	}
 	
 	public double getCenterX(){
-		return this.getX() / 2;
+		return this.getX() + ( this.getWidth() / 2 );
 	}
 	
 	public double getY(){
-		return this.y;
+		return this.y + ( this.getHeight() /2 );
 	}
 	
 	public double getCenterY(){

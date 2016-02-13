@@ -27,7 +27,7 @@ public class CirclesCollision extends Collision {
 	public boolean isCollided(){
 		return 
 				super.getDistance()
-				<= super.getFirstObject().getRadius()
+				< super.getFirstObject().getRadius()
 				+ super.getSecondObject().getRadius();
 	}
 	

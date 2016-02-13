@@ -24,7 +24,7 @@ public class WorldObjectBall extends WorldObject {
 	
 	@Override
 	public double getRadius(){
-		return super.getWidth() + super.getHeight() / 2;
+		return ( super.getWidth() + super.getHeight() ) / 4;
 	}
 	
 	@Override
