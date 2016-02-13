@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import graphics.GameGraphic;
-import graphics.GameGraphicEllipse;
 import graphics.GameGraphicRectangle;
 import physics.Vector2D;
 
@@ -60,7 +59,8 @@ public class WorldObject {
 	 * Saves if it drawable or not.
 	 */
 	private boolean 
-		isVisible = true;
+		visible = true,
+		collision = true;
 
 	/**
 	 * The motion vector.
@@ -82,7 +82,7 @@ public class WorldObject {
 	public WorldObject( double x, double y ){
 		this.x = x;
 		this.y = y;
-		this.isVisible = false;
+		this.visible = false;
 	}
 	
 	public WorldObject( double x, double y, double width, double height){
@@ -108,8 +108,20 @@ public class WorldObject {
 		
 	}
 	
+	public void onCollision( WorldObject wordObject ){
+		
+	}
+	
 	public void addVector( Vector2D vector ){
 		this.vector.add( vector );
+	}
+	
+	public void setVisible( boolean visible ){
+		this.visible = visible;
+	}
+	
+	public void setCollision( boolean collision ){
+		this.collision = collision;
 	}
 	
 	public void setX( double x ){
@@ -134,6 +146,14 @@ public class WorldObject {
 	
 	public void setGraphic( GameGraphic graphic ){
 		this.graphic = graphic;
+	}
+	
+	public boolean isVisible(){
+		return this.visible;
+	}
+	
+	public boolean hasCollision(){
+		return this.collision;
 	}
 	
 	public double getX(){
@@ -161,7 +181,7 @@ public class WorldObject {
 	}
 	
 	public void paint(Graphics g){
-		if( isVisible ){
+		if( visible ){
 			this.graphic.paint(
 					g,
 					( int ) this.getX(),
