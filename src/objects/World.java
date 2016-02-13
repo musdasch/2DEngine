@@ -114,6 +114,28 @@ public class World extends Thread {
 	}
 	
 	/**
+	 * method to find a collision and the object to communicate 
+	 * with what it collides.
+	 * @see objects.WorldObject
+	 */
+	private void collisionDetection(){
+		for (WorldObject worldObject : worldObjects) {
+			for (WorldObject collisionObject : worldObjects) {
+				if( worldObject.hasCollision() && collisionObject.hasCollision() ){
+					if( 
+						worldObject.getX() + worldObject.getWidth() >= collisionObject.getX() &&
+						worldObject.getX() <= collisionObject.getX() + collisionObject.getWidth() &&
+						worldObject.getY() + worldObject.getHeight() >= collisionObject.getY() &&
+						worldObject.getY() <= collisionObject.getY() + collisionObject.getHeight()
+					){
+						worldObject.onCollision( collisionObject );	
+					}
+				}
+			}
+		}
+	}
+	
+	/**
 	 * Run the world and paint it on the GamePanel.
 	 * @see gui.GamePanel
 	 */
@@ -131,6 +153,11 @@ public class World extends Thread {
 					worldObject.addVector( gravity );
 				}
 			}
+			
+			/**
+			 * Collision detection
+			 */
+			this.collisionDetection();
 			
 			/**
 			 * Repaint the GamePanel.
