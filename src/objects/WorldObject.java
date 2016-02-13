@@ -48,12 +48,14 @@ public class WorldObject {
 	 * y is the position on the y-axis.
 	 * width is the with of the object.
 	 * height is the height of the object.
+	 * density of the object.
 	 */
 	private double
 		x = 0,
 		y = 0,
 		width = 0,
-		height = 0;
+		height = 0,
+		density = 0.2;
 	
 	/**
 	 * Saves if it drawable or not.
@@ -131,6 +133,14 @@ public class WorldObject {
 		this.height = height;
 	}
 	
+	public void setDensity( double density ){
+		this.density = density;
+	}
+	
+	public void setMass( double mass ){
+		this.setDensity(mass / ( this.getWidth() * this.getHeight() ) ); 
+	}
+	
 	public void setVector2D( Vector2D vector ){
 		this.vector = vector;
 	}
@@ -165,6 +175,14 @@ public class WorldObject {
 	
 	public double getHeight(){
 		return this.height;
+	}
+	
+	public double getDensity(){
+		return this.density;
+	}
+	
+	public double getMass(){
+		return this.getDensity() * this.getWidth() * this.getHeight();
 	}
 	
 	public Vector2D getVector2D(){
