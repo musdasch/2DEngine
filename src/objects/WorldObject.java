@@ -59,8 +59,7 @@ public class WorldObject {
 	 * Saves if it drawable or not.
 	 */
 	private boolean 
-		visible = true,
-		collision = true;
+		visible = true;
 
 	/**
 	 * The motion vector.
@@ -108,20 +107,12 @@ public class WorldObject {
 		
 	}
 	
-	public void onCollision( WorldObject wordObject ){
-		
-	}
-	
 	public void addVector( Vector2D vector ){
 		this.vector.add( vector );
 	}
 	
 	public void setVisible( boolean visible ){
 		this.visible = visible;
-	}
-	
-	public void setCollision( boolean collision ){
-		this.collision = collision;
 	}
 	
 	public void setX( double x ){
@@ -150,10 +141,6 @@ public class WorldObject {
 	
 	public boolean isVisible(){
 		return this.visible;
-	}
-	
-	public boolean hasCollision(){
-		return this.collision;
 	}
 	
 	public double getX(){
