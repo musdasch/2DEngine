@@ -21,4 +21,19 @@ public class WorldObjectBall extends WorldObject {
 		super( x, y, width, height, vector );
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public double getRadius(){
+		return super.getWidth() + super.getHeight() / 2;
+	}
+	
+	@Override
+	public void setMass( double mass ){
+		super.setDensity( mass / ( Math.pow( this.getRadius(), 2) * Math.PI ) );
+	}
+	
+	@Override
+	public double getMass(){
+		return super.getDensity() * Math.pow( this.getRadius(), 2) * Math.PI;
+	}
 }
