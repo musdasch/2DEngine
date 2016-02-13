@@ -86,6 +86,23 @@ public class Collision {
 		return this.secondObject;
 	}
 	
+	public double getDistance(){
+		return Math.sqrt(
+				(
+					Math.pow(
+						this.getFirstObject().getCenterX()
+						- this.getSecondObject().getCenterX()
+					, 2 )
+	            )
+				+ (
+					Math.pow(
+						this.getFirstObject().getCenterY()
+						- this.getSecondObject().getCenterY()
+					, 2 )
+				)
+			);
+	}
+	
 	/**
 	 * Deactivate the collision detection.
 	 */
@@ -122,4 +139,5 @@ public class Collision {
 	public void setSecondObject( WorldObject secondObject ){
 		this.secondObject = secondObject;
 	}
+	
 }
