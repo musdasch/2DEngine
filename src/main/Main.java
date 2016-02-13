@@ -6,7 +6,7 @@ import graphics.GameGraphicEllipse;
 import gui.GameFrame;
 import objects.World;
 import objects.WorldObjectBall;
-import physics.CirclesCollision;
+import physics.CollisionCircles;
 import physics.Vector2D;
 
 public class Main {
@@ -45,7 +45,7 @@ public class Main {
 		world.addWorldObject( ball2 );
 		
 		
-		CirclesCollision collision = new CirclesCollision(ball, ball2);
+		CollisionCircles collision = new CollisionCircles(ball, ball2);
 		world.addCollision(collision);
 		
 		world.setGravity( new Vector2D( 0, 0.0098 ) );
