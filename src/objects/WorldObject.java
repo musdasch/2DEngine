@@ -37,7 +37,7 @@ import physics.Vector2D;
  * @see objects.World
  * @see physics.Vector2D
  * @see graphics.GameGraphic
- * @author Tim V�gtli
+ * @author Tim Vögtli
  * @version 0.1
  *
  */
