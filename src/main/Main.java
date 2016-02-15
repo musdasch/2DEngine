@@ -74,7 +74,7 @@ public class Main {
 		/**
 		 * Create a collision between the tow balls.
 		 */
-		CollisionCircles collision = new CollisionCircles(ball, ball2);
+		CirclesCollision collision = new CirclesCollision(ball, ball2);
 		world.addCollision(collision);
 		
 		/**
