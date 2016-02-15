@@ -86,6 +86,14 @@ public class WorldObject {
 		this.visible = false;
 	}
 	
+	/**
+	 * Constructor for crate an object with position and dimension. By default it create
+	 * a rectangle as graphic.
+	 * @param x - position on the x-axis.
+	 * @param y - position on the y-axis.
+	 * @param width - the width of the object.
+	 * @param height - the height of the object.
+	 */
 	public WorldObject( double x, double y, double width, double height){
 		this.x = x;
 		this.y = y;
@@ -94,6 +102,15 @@ public class WorldObject {
 		this.initGraphic();
 	}
 	
+	/**
+	 * Constructor for crate an object with position, dimension and a vector for motion.
+	 * By default it create a rectangle as graphic.
+	 * @param x - position on the x-axis.
+	 * @param y - position on the y-axis.
+	 * @param height - the width of the object.
+	 * @param width - the height of the object.
+	 * @param vector - the vector for motion.
+	 */
 	public WorldObject( double x, double y, double height, double width, Vector2D vector ){
 		this.x = x;
 		this.y = y;
@@ -103,16 +120,29 @@ public class WorldObject {
 		this.initGraphic();
 	}
 	
+	/**
+	 * The method for the motion with a vector.
+	 */
 	public void move(){
 		this.x = this.x + this.vector.getX();
 		this.y = this.y + this.vector.getY();
 		
 	}
 	
+	/**
+	 * Add an vector for collision or gravity.
+	 * @param vector - vector the will added to the existing vector.
+	 */
 	public void addVector( Vector2D vector ){
 		this.vector.add( vector );
 	}
 	
+	/**
+	 * Set the visibility of the object. If it <strong>false</strong>
+	 * it will not logrer drawt to the game panel.
+	 * @see gui.GamePanel
+	 * @param visible
+	 */
 	public void setVisible( boolean visible ){
 		this.visible = visible;
 	}
