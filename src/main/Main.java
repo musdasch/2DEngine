@@ -50,7 +50,7 @@ public class Main {
 		
 		world.setGravity( new Vector2D( 0, 0.0098 ) );
 		
-		world.setWorldDelay( 100 );
+		world.setWorldDelay( 30 );
 		
 		GameFrame frame = new GameFrame( "test",  1200, 600, world );
 	}
