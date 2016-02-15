@@ -9,15 +9,27 @@ import objects.WorldObjectBall;
 import physics.CirclesCollision;
 import physics.Vector2D;
 
+/**
+ * It is the test area.
+ * @author Tim Vögtli
+ * @version 0.2
+ */
 public class Main {
 
 	public static void main(String[] args) {
+		
+		/**
+		 * Create a world.
+		 */
 		World world = new World();
 		
+		
+		/**
+		 * creat an
+		 */
 		WorldObjectBall ball = new WorldObjectBall(
 				0,
 				0,
-				100,
 				100,
 				new Vector2D( 2, 0 ) 
 		);
@@ -25,7 +37,6 @@ public class Main {
 		WorldObjectBall ball2 = new WorldObjectBall(
 				1000,
 				0,
-				100,
 				100,
 				new Vector2D( -2.0, 0.2 ) 
 		);
