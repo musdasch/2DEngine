@@ -90,6 +90,10 @@ public class Collision {
 	 * Returns the distance between the tow objects.
 	 * @return Distance between the tow Objects.
 	 */
+	/**
+	 * Returns the distance between the tow objects.
+	 * @return distance between the tow objects.
+	 */
 	public double getDistance(){
 		return Math.sqrt(
 				(
