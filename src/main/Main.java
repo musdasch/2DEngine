@@ -13,10 +13,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println( Math.sqrt( Math.pow(10, 2) * 2 ) );
-		System.out.println( 10.0 / 14.0 );
-		System.out.println(  Math.atan( -10.0 / -10.0 ) );
-		
 		/**
 		 * Create a world.
 		 */
