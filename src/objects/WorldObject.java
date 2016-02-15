@@ -300,11 +300,11 @@ public class WorldObject {
 	}
 	
 	/**
-	 * Return the radius of the object.
+	 * Return the radius of the outer circle of the object.
 	 * @return
 	 */
 	public double getRadius(){
-		return ( this.getWidth() + this.getHeight() ) / 2;
+		return Math.sqrt( Math.pow( this.getWidth(), 2 ) + Math.pow( this.getHeight(), 2 ) ) / 2;
 	}
 	
 	/**
