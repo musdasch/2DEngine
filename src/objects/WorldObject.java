@@ -37,7 +37,7 @@ import physics.Vector2D;
  * @see objects.World
  * @see physics.Vector2D
  * @see graphics.GameGraphic
- * @author Tim Vögtli
+ * @author Tim Vï¿½gtli
  * @version 0.1
  *
  */
@@ -147,86 +147,172 @@ public class WorldObject {
 		this.visible = visible;
 	}
 	
+	/**
+	 * Set the position on the x-axis.
+	 * @param x - The position on the x-axis.
+	 */
 	public void setX( double x ){
 		this.x = x;
 	}
 	
+	/**
+	 * Set the position on the y-axis.
+	 * @param y - The new position on the y-axis.
+	 */
 	public void setY( double y ){
 		this.y = y;
 	}
 	
+	/**
+	 * Set the width of the object.
+	 * @param width - New width of the object.
+	 */
 	public void setWidth( double width ){
 		this.width = width;
 	}
 	
+	/**
+	 * Set the height of the object.
+	 * @param height - New height of the object.
+	 */
 	public void setHeight( double height ){
 		this.height = height;
 	}
 	
+	/**
+	 * Set the density of the object.
+	 * @param density - New density.
+	 */
 	public void setDensity( double density ){
 		this.density = density;
 	}
 	
+	/**
+	 * Set the mass of object it will also change the density.
+	 * @param mass - New mass.
+	 */
 	public void setMass( double mass ){
 		this.setDensity( mass / ( this.getWidth() * this.getHeight() ) );
 	}
 	
+	/**
+	 * Set a new vector to the object.
+	 * @param vector - New vector.
+	 */
 	public void setVector2D( Vector2D vector ){
 		this.vector = vector;
 	}
 	
+	/**
+	 * Set a new graphic to the object.
+	 * @param graphic - New graphic.
+	 */
 	public void setGraphic( GameGraphic graphic ){
 		this.graphic = graphic;
 	}
 	
+	/**
+	 * Return the visibility status of the object.
+	 * @return The visibility status.
+	 */
 	public boolean isVisible(){
 		return this.visible;
 	}
 	
+	/**
+	 * Return the position on the x-axis.
+	 * @return The position on the x-axis.
+	 */
 	public double getX(){
 		return this.x;
 	}
 	
+	/**
+	 * Return the center position on the x-axis.
+	 * @return The center position on the x-axis.
+	 */
 	public double getCenterX(){
 		return this.getX() + ( this.getWidth() / 2 );
 	}
 	
+	/**
+	 * Return the position on the y-axis.
+	 * @return The position on the y-axis.
+	 */
 	public double getY(){
 		return this.y + ( this.getHeight() /2 );
 	}
 	
+	/**
+	 * Return the center position on the y-axis.
+	 * @return The center position on the y-axis.
+	 */
 	public double getCenterY(){
 		return this.getY() / 2;
 	}
 	
+	/**
+	 * Return the width of the object.
+	 * @return The width of the object.
+	 */
 	public double getWidth(){
 		return this.width;
 	}
 	
+	/**
+	 * Return the height of the object.
+	 * @return The height of the object.
+	 */
 	public double getHeight(){
 		return this.height;
 	}
 	
+	/**
+	 * Return the density of the object.
+	 * @return the density of the object.
+	 */
 	public double getDensity(){
 		return this.density;
 	}
 	
+	/**
+	 * Return the mass of the object.
+	 * @return the mass of the object.
+	 */
 	public double getMass(){
 		return this.getDensity() * this.getWidth() * this.getHeight();
 	}
 	
+	/**
+	 * Return the current vector from the object.
+	 * @return
+	 */
 	public Vector2D getVector2D(){
 		return this.vector;
 	}
 	
+	/**
+	 * Return the graphic from the object.
+	 * @return the graphic of the object.
+	 */
 	public GameGraphic getGameGraphic(){
 		return this.graphic;
 	}
 	
+	/**
+	 * Return the radius of the object.
+	 * @return
+	 */
 	public double getRadius(){
-		return 0;
+		return ( this.getWidth() + this.getHeight() ) / 2;
 	}
 	
+	/**
+	 * Method for paint on the GamePanel.
+	 * @see objects.World
+	 * @see gui.GamePanel
+	 * @param g - Graphics form the GamePanel.
+	 */
 	public void paint(Graphics g){
 		if( visible ){
 			this.graphic.paint(
@@ -237,6 +323,9 @@ public class WorldObject {
 		}
 	}
 	
+	/**
+	 * Method to initialize the background color.
+	 */
 	private void initGraphic(){
 		this.graphic = new GameGraphicRectangle( 
 				0,
