@@ -16,6 +16,10 @@ public class Main {
 		System.out.println( Math.sqrt( Math.pow(10, 2) * 2 ) );
 		System.out.println( 10.0 / 14.0 );
 		System.out.println(  Math.atan( -10.0 / -10.0 ) );
+		
+		/**
+		 * Create a world.
+		 */
 		World world = new World();
 		
 		WorldObjectBall ball = new WorldObjectBall(
