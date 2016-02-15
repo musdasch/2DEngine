@@ -86,6 +86,10 @@ public class Collision {
 		return this.secondObject;
 	}
 	
+	/**
+	 * Returns the distance between the tow objects.
+	 * @return distance between the tow objects.
+	 */
 	public double getDistance(){
 		return Math.sqrt(
 				(
