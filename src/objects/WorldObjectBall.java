@@ -5,6 +5,11 @@ import java.awt.Graphics;
 
 import physics.Vector2D;
 
+/**
+ * circle object.
+ * @author Tim Vögtli
+ * @version 0.1
+ */
 public class WorldObjectBall extends WorldObject {
 
 	public WorldObjectBall( double x, double y ) {
@@ -12,13 +17,14 @@ public class WorldObjectBall extends WorldObject {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public WorldObjectBall( double x, double y, double width, double height ) {
-		super( x, y, width, height );
+	public WorldObjectBall( double x, double y, double diameter ) {
+		super( x, y, diameter, diameter );
 		// TODO Auto-generated constructor stub
 	}
 	
-	public WorldObjectBall( double x, double y, double height, double width, Vector2D vector ) {
-		super( x, y, width, height, vector );
+	public WorldObjectBall( double x, double y, double diameter, Vector2D vector ) {
+		
+		super( x, y, diameter, diameter,  vector );
 		// TODO Auto-generated constructor stub
 	}
 	
