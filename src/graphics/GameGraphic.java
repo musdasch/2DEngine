@@ -5,10 +5,10 @@ import java.awt.Graphics;
 
 /**
  * The GameGraphic is the parent of all graphics in the game.
- * @author Tim Vögtli
+ * @author Tim Vï¿½gtli
  * @version 0.1
  */
-public class GameGraphic {
+public abstract class GameGraphic {
 	
 	/**
 	 * x is the position on the x-axis.
