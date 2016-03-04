@@ -212,9 +212,7 @@ public abstract class GameGraphic {
 	 * @see graphics.GameGraphicRectangle
 	 * @param g - The Graphics from a GamePanel.
 	 */
-	public void paint( Graphics g ){
-		// TODO Paint
-	}
+	public abstract void paint( Graphics g );
 	
 	/**
 	 * It is for override in a new graphic so that you can
@@ -224,8 +222,6 @@ public abstract class GameGraphic {
 	 * @param x - The position on the x-axis from a WorldObject.
 	 * @param y - The position on the y-axis from a WorldObject.
 	 */
-	public void paint( Graphics g, int x, int y ){
-		// TODO Paint
-	}
+	public abstract void paint( Graphics g, int x, int y );
 
 }
