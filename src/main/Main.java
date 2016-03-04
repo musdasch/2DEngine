@@ -11,7 +11,7 @@ import physics.Vector2D;
 
 /**
  * It is the test area.
- * @author Tim Vögtli
+ * @author Tim VÃ¶gtli
  * @version 0.2
  */
 public class Main {
