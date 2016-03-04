@@ -7,11 +7,26 @@ import javax.swing.JFrame;
 import listeners.GameWindowListener;
 import objects.World;
 
-
+/**
+ * The GameFrame is a easy way to crate a window for the game.
+ * @author Tim Vögtli
+ * @version 0.1
+ *
+ */
 public class GameFrame extends JFrame {
 	
+	/**
+	 * Holds the GamePanel for drawing the world.
+	 */
 	private GamePanel gamePanel;
 	
+	/**
+	 * Constructor for the GameFrame.
+	 * @param title - The title for the Frame.
+	 * @param width - Frame width.
+	 * @param height - Frame height.
+	 * @param world - The game world
+	 */
 	public GameFrame( String title, int width, int height, World world ){
 		gamePanel = new GamePanel( width, height, world );
 		this.setTitle( title );
