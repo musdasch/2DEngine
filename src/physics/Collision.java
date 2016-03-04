@@ -5,6 +5,10 @@ import objects.WorldObject;
 /**
  * The Collision class is for watching a collision between tow world objects.
  * world objects.
+ * 
+ * -- TO-DO --
+ * The collision with only one WorldObject.
+ * 
  * @see objects.WorldObject
  * @author Tim Vögtli
  * @version 0.2
