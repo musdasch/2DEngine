@@ -11,7 +11,7 @@ import objects.World;
  * The GameFrame is a easy way to crate a window for the game.
  * @author Tim Vögtli
  * @version 0.1
- *
+ * @see GamePanel
  */
 public class GameFrame extends JFrame {
 	
