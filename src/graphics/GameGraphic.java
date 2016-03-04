@@ -5,8 +5,8 @@ import java.awt.Graphics;
 
 /**
  * The GameGraphic is the parent of all graphics in the game.
- * @author Tim V�gtli
- * @version 0.1
+ * @author Tim Vögtli
+ * @version 0.2
  */
 public abstract class GameGraphic {
 	
