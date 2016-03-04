@@ -6,10 +6,10 @@ import objects.WorldObject;
  * The Collision class is for watching a collision between tow world objects.
  * world objects.
  * @see objects.WorldObject
- * @author Tim Vögtli
- * @version 0.1
+ * @author Tim VÃ¶gtli
+ * @version 0.2
  */
-public class Collision {
+public abstract class Collision {
 	
 	/**
 	 * Enable the collision.
@@ -50,17 +50,13 @@ public class Collision {
 	 * it is to be overwritten by a child.
 	 * @return if is a collision happened.
 	 */
-	public boolean isCollided(){
-		return false;
-	}
+	public abstract boolean isCollided();
 	
 	/**
 	 * Method for control the object after an collision.
 	 * it is to be overwritten by a child.
 	 */
-	public void onCollision(){
-		
-	}
+	public abstract void onCollision();
 	
 	/**
 	 * Returns if the collision object active or not.

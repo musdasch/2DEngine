@@ -6,8 +6,8 @@ import objects.WorldObject;
  * The CollisionCircleRectangle class holds the instructions for a collision
  * between a circle an a rectangle.
  * @see physics.Collision
- * @author Tim Vögtli
- * @version 0.1
+ * @author Tim VÃ¶gtli
+ * @version 0.2
  */
 public class CollisionCircleRectangle extends Collision {
 
@@ -47,6 +47,12 @@ public class CollisionCircleRectangle extends Collision {
 	@Override
 	public double getSecondAngle(){
 		return Math.sqrt( Math.pow( super.getSecondAngle(), 2 ) );
+	}
+
+	@Override
+	public void onCollision() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

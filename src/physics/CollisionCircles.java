@@ -5,8 +5,8 @@ import objects.WorldObject;
 /**
  * The CirclesCollision describe the collision from tow circles.
  * @see physics.CollisionCircles
- * @author Tim Vögtli
- * @version 0.1
+ * @author Tim VÃ¶gtli
+ * @version 0.2
  *
  */
 public class CollisionCircles extends Collision {
