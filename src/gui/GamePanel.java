@@ -36,6 +36,12 @@ public class GamePanel extends JPanel {
 	 */
 	private GameGraphic clearRectangle;
 	
+	/**
+	 * The constructor of the GamePanel.
+	 * @param width - The width of the GamePanel.
+	 * @param height - The height of the GamePanel.
+	 * @param world - The game World.
+	 */
 	public GamePanel( int width, int height, World world ){
 		this.world = world;
 		this.world.setGamePanel( this );
@@ -44,6 +50,9 @@ public class GamePanel extends JPanel {
 		this.clearRectangle = new GameGraphicRectangle( 0, 0,width, height );
 	}
 	
+	/**
+	 * Override paintComponent for reset the panel and draw the world new.
+	 */
 	@Override
 	public void paintComponent( Graphics g ){
 		this.clearRectangle.setWidth( this.getWidth() );
