@@ -42,12 +42,11 @@ public class GamePanel extends JPanel {
 	 * @param height - The height of the GamePanel.
 	 * @param world - The game World.
 	 */
-	public GamePanel( int width, int height, World world ){
+	public GamePanel( World world ){
 		this.world = world;
 		this.world.setGamePanel( this );
 		this.world.start();
-		this.setSize( width, height );
-		this.clearRectangle = new GameGraphicRectangle( 0, 0,width, height );
+		this.clearRectangle = new GameGraphicRectangle( 0, 0, this.getWidth(), this.getHeight() );
 	}
 	
 	/**

@@ -1,12 +1,15 @@
 package main;
 
+import graphics.GameGraphicEllipse;
+import gui.GamePanel;
+
 import java.awt.Color;
 
-import graphics.GameGraphicEllipse;
-import gui.GameFrame;
+import javax.swing.JFrame;
+
+import listeners.GameWindowListener;
 import objects.World;
 import objects.WorldObjectBall;
-import physics.CollisionCircles;
 import physics.Vector2D;
 
 /**
@@ -29,23 +32,14 @@ public class Main {
 		 */
 		WorldObjectBall ball = new WorldObjectBall(
 				0,
-				0,
+				600,
 				100,
-				new Vector2D( 2, 0 ) 
+				new Vector2D( 0, -3 ) 
 		);
+
 		
 		/**
-		 * Create an oder circle.
-		 */
-		WorldObjectBall ball2 = new WorldObjectBall(
-				1000,
-				0,
-				100,
-				new Vector2D( -2.0, 0.2 ) 
-		);
-		
-		/**
-		 * Create an graphic object for the tow balls.
+		 * Create an graphic object for the ball.
 		 */
 		GameGraphicEllipse ellipse = new GameGraphicEllipse(
 				0,
@@ -60,22 +54,15 @@ public class Main {
 		
 		
 		/**
-		 * add the graphic to the tow balls.
+		 * add the graphic to the ballO.
 		 */
 		ball.setGraphic( ellipse );
-		ball2.setGraphic( ellipse );
 		
 		/**
 		 * add the tow balls to the world
 		 */
 		world.addWorldObject( ball );
-		world.addWorldObject( ball2 );
 		
-		/**
-		 * Create a collision between the tow balls.
-		 */
-		CollisionCircles collision = new CollisionCircles(ball, ball2);
-		world.addCollision(collision);
 		
 		/**
 		 * Set a gravity to the world
@@ -85,12 +72,23 @@ public class Main {
 		/**
 		 * set the world delay of 30 milliseconds for slow motion.
 		 */
-		world.setWorldDelay( 30 );
+		world.setWorldDelay( 5 );
 		
 		/**
-		 * Create a frame for the world.
+		 * Create a panel for the world
 		 */
-		GameFrame frame = new GameFrame( "test",  1200, 600, world );
+		GamePanel gamePanel = new GamePanel( world );
+		
+		/**
+		 * Create a frame for the gamePanel.
+		 */
+		JFrame frame = new JFrame();
+		
+		frame.setTitle( "Game" );
+		frame.setSize( 400, 700 );
+		frame.addWindowListener( new GameWindowListener() );
+		frame.add( gamePanel );
+		frame.setVisible( true );
 	}
 
 }
